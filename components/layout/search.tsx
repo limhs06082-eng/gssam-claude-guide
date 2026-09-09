@@ -13,7 +13,8 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import type { SearchDoc } from "@/lib/content";
+import type { SearchDoc } from "@/lib/search-index";
+import { withBase } from "@/lib/site";
 
 interface Hit {
   doc: SearchDoc;
@@ -76,7 +77,7 @@ function search(docs: SearchDoc[], rawQuery: string): Hit[] {
 
 /**
  * 사이트 검색. shadcn Command 형태, Ctrl/Cmd+K로 열린다. (DESIGN-SYSTEM 19절)
- * 인덱스는 처음 열 때 /api/search 에서 한 번만 받아온다.
+ * 인덱스는 처음 열 때 /search-index.json 에서 한 번만 받아온다. (빌드 때 미리 생성)
  */
 export function SiteSearch() {
   const router = useRouter();
@@ -89,7 +90,7 @@ export function SiteSearch() {
     if (docs || loading) return;
     setLoading(true);
     try {
-      const res = await fetch("/api/search");
+      const res = await fetch(withBase("/search-index.json"));
       setDocs((await res.json()) as SearchDoc[]);
     } catch {
       setDocs([]);

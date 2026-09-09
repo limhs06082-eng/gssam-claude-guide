@@ -1,6 +1,6 @@
 # Claude 초보자 가이드
 
-공개 주소: https://gssam-claude-guide.vercel.app
+공개 주소: https://limhs06082-eng.github.io/gssam-claude-guide/
 저장소: https://github.com/limhs06082-eng/gssam-claude-guide
 
 Claude를 처음 사용하는 교사와 비개발자를 위한 한국어 학습 사이트입니다.
@@ -18,10 +18,13 @@ npm install
 npm run dev
 ```
 
-브라우저에서 http://localhost:3000 을 엽니다.
+브라우저에서 http://localhost:3000/gssam-claude-guide/ 을 엽니다.
+주소에 저장소 이름이 붙는 것은 GitHub Pages 배포 주소와 맞추기 위해서입니다 (`lib/site.ts`).
+검색을 쓰려면 `node scripts/build-search-index.mjs` 를 한 번 실행해 인덱스 파일을 만듭니다.
 
 ```bash
-npm run build   # 배포용 빌드 (모든 페이지를 정적으로 생성)
+npm run build   # 정적 사이트 생성 → out/ (검색 인덱스도 함께 만듦)
+npm run preview # out/ 을 배포 주소와 같은 구조로 미리보기 (http://localhost:3211/gssam-claude-guide/)
 npm run lint    # ESLint
 npm run check   # 콘텐츠 검사 (누락 페이지, frontmatter, 컴포넌트, 링크)
 npm run audit   # 편집 감사 (상자 밀도, 문체, 중복, 난이도 분포)
@@ -33,7 +36,6 @@ npm run audit   # 편집 감사 (상자 밀도, 문체, 중복, 난이도 분포
 app/
   page.tsx              홈
   [...slug]/            과정 소개(/chat) 와 학습 페이지(/chat/first-question)
-  api/search/route.ts   빌드 시 생성되는 검색 인덱스
 components/
   layout/               헤더, 사이드바, 목차, 검색, 이전/다음
   learning/             학습용 컴포넌트 (Analogy, Steps, PromptBox, Screenshot ...)
@@ -43,7 +45,9 @@ content/                MDX 학습 콘텐츠 (과정별 폴더)
   PRODUCT-FACTS.md      제품 설명 시 단정해도 되는 사실의 범위
 lib/
   navigation.ts         정보구조(과정 → 섹션 → 페이지). 제목과 순서의 단일 진실 원천
-  content.ts            MDX 읽기·컴파일·목차·검색 인덱스
+  content.ts            MDX 읽기·컴파일·목차
+  search-index.ts       검색 인덱스 생성 (빌드 전에 public/search-index.json 으로 저장)
+  site.ts               배포 경로(basePath)
 scripts/check-content.mjs  콘텐츠 검사
 ```
 
@@ -62,7 +66,8 @@ scripts/check-content.mjs  콘텐츠 검사
 이미지는 `public/screenshots/`에 있고, 사이트가 바뀌면 다음 명령으로 다시 만듭니다.
 
 ```bash
-npm run build && npm run capture
+npm run build && npm run preview   # 다른 터미널
+npm run capture
 ```
 
 ## 학습 진행률
@@ -72,11 +77,13 @@ npm run build && npm run capture
 
 ## 배포
 
-GitHub 저장소 `main` 브랜치가 Vercel 프로젝트 `gssam-claude-guide`에 연결되어 있습니다.
-`main`에 push하면 자동으로 다시 배포됩니다. 환경변수는 필요 없습니다.
+GitHub Pages 에 올라갑니다. `main` 에 push 하면 `.github/workflows/pages.yml` 이
+정적 사이트를 만들어 자동으로 배포합니다. 서버도 환경변수도 없습니다.
 
 ```bash
 git add -A
 git commit -m "내용 수정"
 git push
 ```
+
+진행 상황은 저장소의 Actions 탭에서 볼 수 있습니다. 보통 1~2분 걸립니다.

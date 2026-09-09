@@ -223,7 +223,11 @@ npm run build
 - 이 사이트 자신의 화면(목차·검색·모바일 메뉴·이전/다음)은 `npm run capture`로 자동 생성해
   "이 사이트 이용 방법" 페이지에만 넣는다. 사이트가 바뀌면 다시 만들면 된다.
 
-**인터넷 공개.** GitHub 저장소와 Vercel 연결이 필요하다. 두 서비스 로그인은 사용자가 직접 해야 한다.
+**인터넷 공개 — GitHub Pages (사용자 결정, 2026-09-09).** 처음에는 Vercel에 올렸으나 사용자가 GitHub Pages로
+바꾸자고 해 정적 내보내기(`output: "export"`)로 전환했다. 그에 따라 서버 라우트였던 검색 인덱스를
+빌드 전에 만드는 JSON 파일로 바꿨고, 주소에 저장소 이름이 붙으므로 `lib/site.ts`의 basePath를
+`<img>`와 `fetch()`에 직접 붙였다. 주소: https://limhs06082-eng.github.io/gssam-claude-guide/
+`main`에 push하면 `.github/workflows/pages.yml`이 자동 배포한다. Vercel 프로젝트는 일시정지했다.
 
 **콘텐츠 최신성.** Claude, Firebase, Vercel의 화면은 바뀐다. `content/PRODUCT-FACTS.md`가
 단정해도 되는 범위를 정해 두었으니, 제품이 바뀌면 그 문서를 먼저 고치고 콘텐츠를 맞춘다.

@@ -1,12 +1,14 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
-import GithubSlugger from "github-slugger";
 import { compileMDX } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import { mdxComponents } from "@/components/mdx-components";
-import { type FlatPage, type Level, type NavCourse, getAllPages } from "./navigation";
+import { type FlatPage, type Level, type NavCourse } from "./navigation";
+import { extractToc, type TocItem } from "./search-index";
+
+export { extractToc, buildSearchIndex, type SearchDoc, type TocItem } from "./search-index";
 
 const CONTENT_DIR = path.join(process.cwd(), "content");
 
@@ -16,12 +18,6 @@ export interface PageMeta {
   level?: Level;
   /** 예상 소요 시간(분) */
   time?: number;
-}
-
-export interface TocItem {
-  id: string;
-  text: string;
-  depth: 2 | 3;
 }
 
 function pagePath(courseSlug: string, pageSlug: string) {
@@ -47,40 +43,6 @@ export async function pageExists(courseSlug: string, pageSlug: string) {
   } catch {
     return false;
   }
-}
-
-/**
- * 본문에서 H2/H3를 뽑아 목차를 만든다.
- * rehype-slug와 같은 github-slugger를 같은 순서로 돌려 id를 일치시킨다.
- */
-export function extractToc(markdown: string): TocItem[] {
-  const slugger = new GithubSlugger();
-  const items: TocItem[] = [];
-  let inFence = false;
-  for (const rawLine of markdown.split("\n")) {
-    const line = rawLine.trimEnd();
-    if (/^\s*(```|~~~)/.test(line)) {
-      inFence = !inFence;
-      continue;
-    }
-    if (inFence) continue;
-    const m = /^(#{1,6})\s+(.+?)\s*#*\s*$/.exec(line);
-    if (!m) continue;
-    const depth = m[1].length;
-    const text = cleanInline(m[2]);
-    const id = slugger.slug(text);
-    if (depth === 2 || depth === 3) items.push({ id, text, depth });
-  }
-  return items;
-}
-
-function cleanInline(text: string) {
-  return text
-    .replace(/`([^`]+)`/g, "$1")
-    .replace(/\*\*([^*]+)\*\*/g, "$1")
-    .replace(/\*([^*]+)\*/g, "$1")
-    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
-    .trim();
 }
 
 const mdxOptions = {
@@ -132,50 +94,4 @@ export async function readPageMeta(page: FlatPage): Promise<PageMeta | null> {
   const source = await readPageSource(page.course.slug, page.slug);
   if (source === null) return null;
   return normalizeMeta(matter(source).data);
-}
-
-/* ---------- 검색 인덱스 ---------- */
-
-export interface SearchDoc {
-  href: string;
-  title: string;
-  course: string;
-  section?: string;
-  description?: string;
-  headings: string[];
-  /** 검색용 평문. 구두점과 마크업을 걷어낸 본문. */
-  text: string;
-}
-
-function stripMdx(body: string): string {
-  return body
-    .replace(/^\s*(import|export)\s.*$/gm, " ")
-    .replace(/<\/?[A-Za-z][^>]*>/gs, " ")
-    .replace(/\{[^}]*\}/g, " ")
-    .replace(/```[\s\S]*?```/g, (block) => block.replace(/```[^\n]*/g, " "))
-    .replace(/!\[[^\]]*\]\([^)]*\)/g, " ")
-    .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
-    .replace(/[#>*_`|~-]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-export async function buildSearchIndex(): Promise<SearchDoc[]> {
-  const docs: SearchDoc[] = [];
-  for (const page of getAllPages()) {
-    const source = await readPageSource(page.course.slug, page.slug);
-    if (source === null) continue;
-    const { content: body, data } = matter(source);
-    const meta = normalizeMeta(data);
-    docs.push({
-      href: page.href,
-      title: page.title,
-      course: page.course.title,
-      section: page.section.title,
-      description: meta.description,
-      headings: extractToc(body).map((t) => t.text),
-      text: stripMdx(body),
-    });
-  }
-  return docs;
 }

@@ -5,12 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
     "lint": "eslint",
     "check": "node scripts/check-content.mjs",
     "audit": "node scripts/audit-content.mjs",
     "log": "node scripts/extract-orchestration-log.mjs",
-    "capture": "node scripts/capture-site.mjs"
+    "capture": "node scripts/capture-site.mjs",
+    "prebuild": "node scripts/build-search-index.mjs",
+    "preview": "node scripts/serve-out.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

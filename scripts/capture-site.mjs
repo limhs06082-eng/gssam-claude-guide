@@ -1,8 +1,8 @@
 /**
  * 이 사이트 자체의 화면을 찍어 public/screenshots/ 에 넣는다.
  *
- *   npm run build && npx next start -p 3211   (다른 터미널)
- *   npm run capture                            (기본 주소 http://localhost:3211)
+ *   npm run build && npm run preview   (다른 터미널)
+ *   npm run capture                     (기본 주소 http://localhost:3211/gssam-claude-guide)
  *   BASE_URL=http://localhost:3000 npm run capture
  *
  * 실제 Claude·Firebase·Vercel 앱 화면은 찍지 않는다. 이 스크립트는
@@ -10,13 +10,14 @@
  *
  * 브라우저는 따로 내려받지 않고 컴퓨터에 설치된 Chrome 또는 Edge를 쓴다.
  * 개발 서버(next dev)로 찍으면 왼쪽 아래에 개발용 표시가 함께 찍히므로
- * 반드시 빌드 후 next start 로 띄운 서버를 대상으로 한다.
+ * 반드시 빌드 후 npm run preview 로 띄운 정적 서버를 대상으로 한다.
  */
 import fs from "node:fs";
 import path from "node:path";
 import { chromium } from "playwright-core";
+import { BASE_PATH } from "../lib/site.ts";
 
-const BASE = process.env.BASE_URL ?? "http://localhost:3211";
+const BASE = (process.env.BASE_URL ?? "http://localhost:3211") + BASE_PATH;
 const OUT = path.resolve(import.meta.dirname, "..", "public", "screenshots", "getting-started");
 const LESSON = "/chat/first-question";
 
@@ -79,7 +80,7 @@ console.log(`저장: ${OUT}`);
 /* 1. 데스크톱 전체 구조 — 왼쪽 목차, 본문, 오른쪽 페이지 목차, 상단 검색 */
 {
   const { context, page } = await newPage({ width: 1280, height: 860 });
-  await page.goto(BASE + LESSON);
+  await page.goto(BASE + LESSON + "/");
   await settle(page);
   await shot(page, "how-to-use-this-site-1");
 
@@ -107,7 +108,7 @@ console.log(`저장: ${OUT}`);
 /* 4. 휴대폰 — 왼쪽 위 메뉴 버튼으로 목차를 연 상태 */
 {
   const { context, page } = await newPage({ width: 390, height: 844, mobile: true });
-  await page.goto(BASE + LESSON);
+  await page.goto(BASE + LESSON + "/");
   await settle(page);
   await page.getByRole("button", { name: "학습 목차 열기" }).click();
   await page.locator("[data-slot=sheet-content]").waitFor({ state: "visible" });

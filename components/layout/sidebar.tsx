@@ -18,7 +18,8 @@ function courseOf(pathname: string) {
  * 과정 이름은 과정 소개 페이지로 가는 링크, 오른쪽 화살표는 펼침/접힘 버튼이다.
  */
 export function Sidebar({ onNavigate, className }: { onNavigate?: () => void; className?: string }) {
-  const pathname = usePathname();
+  // trailingSlash 설정 때문에 /chat/first-question/ 로 올 수 있다. 끝 슬래시를 떼고 비교한다.
+  const pathname = usePathname().replace(/\/+$/, "") || "/";
   const activeCourse = courseOf(pathname);
   const [open, setOpen] = useState<Record<string, boolean>>(() => ({ [activeCourse]: true }));
 
