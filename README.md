@@ -1,5 +1,8 @@
 # Claude 초보자 가이드
 
+공개 주소: https://gssam-claude-guide.vercel.app
+저장소: https://github.com/limhs06082-eng/gssam-claude-guide
+
 Claude를 처음 사용하는 교사와 비개발자를 위한 한국어 학습 사이트입니다.
 Claude Chat(같이 생각하기), Claude Cowork(일 맡기기), Claude Code 앱(직접 만들기)을 기초부터 안내하고,
 데이터 저장 → 데이터베이스 → 실시간 동기화 → 로그인 → 보안 → 배포까지 이어집니다.
@@ -69,4 +72,11 @@ npm run build && npm run capture
 
 ## 배포
 
-GitHub 저장소를 Vercel에 연결하면 됩니다. 환경변수는 필요 없습니다.
+GitHub 저장소 `main` 브랜치가 Vercel 프로젝트 `gssam-claude-guide`에 연결되어 있습니다.
+`main`에 push하면 자동으로 다시 배포됩니다. 환경변수는 필요 없습니다.
+
+```bash
+git add -A
+git commit -m "내용 수정"
+git push
+```
