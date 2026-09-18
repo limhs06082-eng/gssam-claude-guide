@@ -88,6 +88,7 @@ export const courses: NavCourse[] = [
         pages: [
           { slug: "what-is-cowork", title: "Cowork란?" },
           { slug: "chat-vs-cowork", title: "Chat과 Cowork의 차이" },
+          { slug: "one-claude", title: "하나로 합쳐진 Chat과 Cowork" },
           { slug: "screen-tour", title: "화면 살펴보기" },
           { slug: "first-task", title: "첫 작업 맡겨보기" },
           { slug: "work-with-files", title: "파일을 주고 작업시키기" },

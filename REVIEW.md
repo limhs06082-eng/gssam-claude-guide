@@ -231,3 +231,15 @@ npm run build
 
 **콘텐츠 최신성.** Claude, Firebase, Vercel의 화면은 바뀐다. `content/PRODUCT-FACTS.md`가
 단정해도 되는 범위를 정해 두었으니, 제품이 바뀌면 그 문서를 먼저 고치고 콘텐츠를 맞춘다.
+
+**Chat·Cowork 통합 반영 (2026-09-18).** 2026-09-16부터 Anthropic이 Chat과 Cowork를 하나의 대화창으로
+합치기 시작했다(유료 요금제부터 단계적, 이전 화면과 새 화면이 한동안 공존). 대응 원칙은 셋이다.
+
+- 정보구조는 바꾸지 않는다. "Chat·Cowork·Code"는 부탁하는 방식 세 가지의 이름으로 계속 쓴다.
+  연수에서 이 이름으로 배운 사용자가 돌아와서 길을 잃지 않게 하기 위해서다.
+- 차이는 한 페이지에 모은다. `cowork/one-claude`("하나로 합쳐진 Chat과 Cowork")가 무엇이 바뀌었는지,
+  내 화면이 어느 쪽인지, 옮겨 간 메뉴, 새 기능(Docs·Slides·Design), 아직 안 되는 것을 설명한다.
+  다른 페이지는 "Cowork 영역"처럼 별도 영역을 전제하는 문장만 두 화면에서 다 맞게 고치고 이 페이지로 보낸다.
+- 단정 범위는 `content/PRODUCT-FACTS.md`의 "Claude Cowork (일 맡기기)" 절에 먼저 적고, 그 범위 안에서만 쓴다.
+  폴더를 고르는 정확한 메뉴 이름·위치는 여전히 단정하지 않는다.
+  근거: https://support.claude.com/en/articles/16761823 , https://claude.com/blog/cowork-is-now-claude
