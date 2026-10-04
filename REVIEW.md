@@ -243,3 +243,19 @@ npm run build
 - 단정 범위는 `content/PRODUCT-FACTS.md`의 "Claude Cowork (일 맡기기)" 절에 먼저 적고, 그 범위 안에서만 쓴다.
   폴더를 고르는 정확한 메뉴 이름·위치는 여전히 단정하지 않는다.
   근거: https://support.claude.com/en/articles/16761823 , https://claude.com/blog/cowork-is-now-claude
+
+**업데이트 점검 (2026-10-04).** 2026-09-18 반영 이후의 공식 릴리스 노트, 데스크톱 앱 변경 기록, 도움말,
+Claude Code 문서, Vercel·Firebase 문서를 확인했다. 대부분은 버그 수정, 기업용 설정, 새 모델 출시라 초보 과정에 영향이 없다.
+모델 이름은 원래 쓰지 않으므로 새 모델(9월 출시)도 반영하지 않았다. 반영한 것은 셋이다.
+
+- Claude Code가 `AGENTS.md`를 직접 읽게 되었다(CLAUDE.md가 없을 때만, 둘 다 있으면 CLAUDE.md만).
+  두 파일에 규칙을 나눠 적으면 한쪽이 무시되는 함정이 생겨 `advanced/agents-md`에 읽는 규칙과 `@AGENTS.md`로
+  함께 쓰는 법을, `advanced/claude-md`에 AGENTS.md가 있는 폴더에서 CLAUDE.md를 만들 때의 주의를 넣었다.
+  근거: https://code.claude.com/docs/en/memory
+- 통합 화면의 "아직 안 되는 것"에 대화 분기를 본문에도 넣었다. 사실 시트에는 있었으나 본문에서 빠져 있었다.
+  공식 목록에 새로 보이는 "GitHub에서 추가", Dispatch는 초보 과정에서 쓰지 않는 기능이라 사실 시트에만 적었다.
+- 사실 시트에 확인 날짜를 남겼다. 통합 화면은 여전히 Pro·Max 단계 적용 중이고 Docs·Slides·Design도 유료 베타다.
+
+확인했지만 바꾸지 않은 것: 일부 정리 사이트가 "Vercel Hobby는 프로젝트 1개", "Docs·Slides·Design은 모든 요금제"라고
+적었으나 공식 문서와 달랐다(Hobby 프로젝트 200개, Docs 등은 유료 베타). Vercel의 새 프로젝트 기본 보호는 여전히
+Standard Protection이라 프로덕션 주소가 공개되므로 배포 과정 설명은 그대로 둔다.
