@@ -259,3 +259,30 @@ Claude Code 문서, Vercel·Firebase 문서를 확인했다. 대부분은 버그
 확인했지만 바꾸지 않은 것: 일부 정리 사이트가 "Vercel Hobby는 프로젝트 1개", "Docs·Slides·Design은 모든 요금제"라고
 적었으나 공식 문서와 달랐다(Hobby 프로젝트 200개, Docs 등은 유료 베타). Vercel의 새 프로젝트 기본 보호는 여전히
 Standard Protection이라 프로덕션 주소가 공개되므로 배포 과정 설명은 그대로 둔다.
+
+**업데이트 점검 (2026-10-06).** 10-04 점검 이후의 Claude Code 변경 기록(2.1.289~2.1.291), 데스크톱 앱 Code 탭 문서,
+권한 모드 문서, 도움말(통합 화면·릴리스 노트·아티팩트), 블로그, 플랫폼 릴리스 노트, Vercel·Firebase 소식을 확인했다.
+10-05·10-06 날짜의 변경은 Claude Code CLI 2.1.290·2.1.291뿐이고 전부 mods·플러그인 훅·관리 설정 같은 개발자용이라
+초보 과정에 영향이 없다. 대신 점검 중에 이 사이트가 놓치고 있던 9월 말 변경 하나를 반영했다.
+
+- Claude Code 앱의 권한 모드. 이름이 수동(Manual)·편집 허용(Accept edits)·계획(Plan)·자동(Auto)으로 바뀌었고
+  (예전 이름 Ask permissions·Auto accept edits·Plan mode), 최근 버전은 세션이 자동 모드로 시작할 수 있다.
+  사이트는 "허락을 묻는 창이 뜨면 읽고 허락합니다"라고만 안내해 왔는데, 자동으로 시작한 초보자는 그 창을 한 번도 보지 못한다.
+  그래서 `code/what-is-claude-code`의 "파일을 고치기 전에 물어봅니다" 절에 모드 선택과 수동·자동의 차이를 넣고,
+  `code/screen-tour`의 화면 안내에 권한 모드 선택을 추가하고 "창이 한 번도 안 뜨면 자동 모드"를 적었으며,
+  `code/getting-started`에 첫 인사 전에 수동으로 맞추는 단계와 메뉴를 못 찾을 때의 문제 해결 항목을 넣었다.
+  용어는 `cowork/one-claude`의 Cowork 권한 설정(수동/자동)과 맞췄다. 단정 범위는 PRODUCT-FACTS "Claude Code 앱" 절.
+  근거: https://code.claude.com/docs/en/permission-modes , https://code.claude.com/docs/en/desktop#choose-a-permission-mode ,
+  https://code.claude.com/docs/en/desktop-quickstart
+- 통합 화면의 "아직 안 되는 것" 목록은 10-04와 같아 확인 날짜만 갱신했다.
+
+확인했지만 바꾸지 않은 것은 다음과 같다.
+
+- Claude Code "프로젝트" 개편(9월 17일 발표, 클라우드 세션 전용 베타, 일부 Pro·Max). 로컬 폴더로 시작하는 초보 흐름과 무관하고
+  기존 프로젝트는 그대로 동작한다. 베타가 넓어지면 `code/what-is-a-project`의 "Chat의 프로젝트와는 다릅니다" 상자를 다시 본다.
+- Claude Code mods(10월 1일). TypeScript로 동작을 바꾸는 개발자 기능이라 심화 과정에도 넣지 않았다.
+- Docs·Slides·Design 요금제. 도움말 릴리스 노트의 9월 16일 항목은 "모든 요금제"라고 적혀 있으나 아티팩트 전용 도움말은
+  "유료 요금제 베타"다. 더 구체적인 쪽을 따라 "유료 베타"를 유지했다. 근거: https://support.claude.com/en/articles/17153992
+- Vercel Hobby 배포 보관 정책 변경(9월 16일부터, 최근 배포 3개 유지). 프로덕션 배포는 지워지지 않으므로 배포 과정 설명은 그대로 둔다.
+- Firebase 웹 SDK는 8월 이후 초보 과정과 관련된 변경이 없다.
+- 음성 대화를 학습에 쓰도록 묻는 안내(10월 4일). 이 사이트는 음성 모드를 다루지 않아 반영하지 않았다.
