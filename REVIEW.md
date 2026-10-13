@@ -286,3 +286,27 @@ Standard Protection이라 프로덕션 주소가 공개되므로 배포 과정 �
 - Vercel Hobby 배포 보관 정책 변경(9월 16일부터, 최근 배포 3개 유지). 프로덕션 배포는 지워지지 않으므로 배포 과정 설명은 그대로 둔다.
 - Firebase 웹 SDK는 8월 이후 초보 과정과 관련된 변경이 없다.
 - 음성 대화를 학습에 쓰도록 묻는 안내(10월 4일). 이 사이트는 음성 모드를 다루지 않아 반영하지 않았다.
+
+**업데이트 점검 (2026-10-13).** 10-06 이후의 Claude Code 변경 기록(2.1.292~2.1.296), 도움말 릴리스 노트, 통합 화면 도움말,
+아티팩트 도움말, 제품 소식(claude.com/resources/articles), Vercel 변경 기록, Firebase JS SDK 릴리스 노트를 확인했다. 반영한 것은 하나다.
+
+- Docs·Slides·Design 베타 종료(10월 8일). 무료를 포함한 모든 요금제에서 쓸 수 있게 되었고 Enterprise는 10월 15일부터 기본 켜짐.
+  사이트는 `cowork/make-deliverables`와 `cowork/one-claude`에서 "유료 요금제라면 ... 셋 다 아직 베타"라고 적고 있었다.
+  두 문장을 "무료 요금제를 포함해 모든 요금제에서"로 고치고, one-claude에는 말로 요청하는 방법과 아티팩트 메뉴에서 다시 찾는 법을 한 줄 넣었다.
+  10-04·10-06 점검에서 "유료 베타"를 유지한 근거였던 아티팩트 도움말이 이번에 "모든 요금제, 기본 켜짐"으로 바뀌었다.
+  통합 화면 도움말은 아직 "유료 요금제"라고 적혀 있으나 더 새로운 두 출처를 따른다. 날짜는 콘텐츠에 쓰지 않는다(사실 시트 규칙).
+  근거: https://claude.com/resources/articles/dashboards-and-motion , https://support.claude.com/en/articles/17153992
+- 통합 화면의 "아직 안 되는 것"과 적용 현황은 10-06과 같아 확인 날짜만 갱신했다.
+
+확인했지만 바꾸지 않은 것은 다음과 같다.
+
+- 같은 발표의 Claude Dashboards(유료 베타, 데이터 플랫폼 연결)와 Claude Motion(Team·Enterprise 베타, 애니메이션)은 초보 과정 범위 밖이라
+  사실 시트에 "다루지 않는다"로만 적었다. 독립 사이트였던 claude.ai/design이 12월 14일에 닫히지만 사이트는 그 주소를 쓰지 않는다.
+- Claude for Google Workspace(10월 6일, 유료 요금제 베타): Google 문서·시트·슬라이드 안에서 Claude를 쓰는 부가 기능과 Google 파일을 만드는 커넥터.
+  교사에게 쓸모 있지만 외부 부가 기능이고 커넥터는 이미 심화 주제이므로 사실 시트의 심화 목록에만 추가했다.
+  근거: https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides
+- Claude Code 2.1.292~2.1.296(10월 6~9일): 게이트웨이·플러그인·mods·Windows 버그 수정뿐이라 초보 과정에 영향이 없다.
+- 새 모델(Haiku 5.5, 10월 7일)과 Max·Team의 월별 API 크레딧: 모델 이름과 요금은 원래 쓰지 않는다.
+- Firebase JS SDK 13.0.0(10월 7일): 호환성이 깨지는 변경은 전부 AI Logic 쪽이고 Firestore·Authentication은 기능 추가뿐이다.
+  사이트 콘텐츠는 SDK 함수 이름이나 버전을 직접 적지 않아 영향이 없다.
+- Vercel 10월 변경 기록은 AI Gateway 모델 추가와 마이크로프런트엔드 요금뿐이다.
