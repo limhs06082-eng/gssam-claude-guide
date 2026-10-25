@@ -410,6 +410,7 @@ export const courses: NavCourse[] = [
           { slug: "plugins", title: "Plugins" },
           { slug: "mcp", title: "MCP" },
           { slug: "multiple-agents", title: "여러 에이전트 활용하기" },
+          { slug: "cloud", title: "클라우드에서 Claude Code 사용하기" },
           { slug: "vscode", title: "VS Code에서 Claude Code 사용하기" },
           { slug: "cli", title: "터미널(CLI)에서 Claude Code 사용하기" },
           { slug: "git-advanced", title: "Git 조금 더 알기" },

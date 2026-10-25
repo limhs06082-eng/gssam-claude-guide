@@ -335,3 +335,17 @@ Claude Code 변경 기록(2.1.297~2.1.310)과 데스크톱 앱 문서, Vercel �
   데스크톱 앱 문서의 권한 모드(기본 수동, 폴더별로 기억)는 10-06과 같다. Code Review 정식 출시(10월 15일)와 Claude Security(Enterprise)도 범위 밖이다.
 - Vercel(10월 22~23일): CLI로 계정 없이 배포하기, 빌드 캐시 크기 표시 등. GitHub 저장소를 연결하는 초보 흐름에는 영향이 없다.
 - Firebase JS SDK 13.1.0(10월 21일): Authentication 버그 수정과 Firestore Pipelines 기능 추가뿐이다.
+
+**클라우드에서 Claude Code 사용하기 추가 (2026-10-25, 사용자 요청).** 사이트에는 로컬(내 컴퓨터의 폴더) 작업만 있고
+클라우드 세션 설명이 없었다. "더 알아보기 > Claude Code 더 잘 쓰기"에 `advanced/cloud` 한 페이지를 넣었다. 판단은 셋이다.
+
+- 심화 과정에 둔다. 클라우드 세션은 GitHub 저장소가 있어야 시작되고 결과가 새 브랜치로 올라가므로, GitHub·Vercel까지 마친 뒤에
+  읽는 것이 맞다. 기본 과정(로컬 기준)은 그대로 두고, `code/getting-started`에 실행 환경이 클라우드로 선택되어 폴더 대신 저장소를
+  고르라고 나올 때의 문제 해결 항목만 넣어 이 페이지로 보냈다.
+- 권한 모드는 "계획으로 시작"을 권한다. 클라우드에는 수동 모드가 없어(편집 허용·계획·자동) 사이트 전체의 "수동으로 시작" 원칙을
+  그대로 쓸 수 없다. 고치기 전에 승인을 받는 계획 모드가 가장 가깝다.
+- 결과 확인은 Vercel 브랜치 미리보기로 안내한다. 공식 문서는 클라우드 세션에서 미리보기 화면이 되는지 밝히지 않는다. 대신 배포 과정에서
+  이미 연결한 Vercel이 브랜치마다 미리보기 주소를 만든다(기본 보호 설정에서는 로그인한 본인만 볼 수 있음). 브랜치·PR은 처음 나오는
+  개념이라 한 줄 정의와 `advanced/git-advanced` 링크를 붙였다. 터미널 전용 기능(--cloud, teleport), Remote Control,
+  클라우드 환경 세부 설정, Claude Code "프로젝트"는 다루지 않는다(CLI 중심 과정 금지 원칙).
+  근거: https://code.claude.com/docs/en/web-quickstart , https://code.claude.com/docs/en/claude-code-on-the-web

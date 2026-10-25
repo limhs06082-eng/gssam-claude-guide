@@ -1480,6 +1480,7 @@ Firebase를 사용해서 구현해 줘.
 - Skills
 - Plugins
 - MCP
+- 클라우드에서 Claude Code 사용하기
 - VS Code
 - CLI
 - Firebase 심화
