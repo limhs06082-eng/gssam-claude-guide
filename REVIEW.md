@@ -310,3 +310,42 @@ Standard Protection이라 프로덕션 주소가 공개되므로 배포 과정 �
 - Firebase JS SDK 13.0.0(10월 7일): 호환성이 깨지는 변경은 전부 AI Logic 쪽이고 Firestore·Authentication은 기능 추가뿐이다.
   사이트 콘텐츠는 SDK 함수 이름이나 버전을 직접 적지 않아 영향이 없다.
 - Vercel 10월 변경 기록은 AI Gateway 모델 추가와 마이크로프런트엔드 요금뿐이다.
+
+**업데이트 점검 (2026-10-25).** 10-13 이후의 도움말 릴리스 노트, 통합 화면 도움말, Cowork 안전 도움말, 아티팩트 도움말, 제품 소식,
+Claude Code 변경 기록(2.1.297~2.1.310)과 데스크톱 앱 문서, Vercel 변경 기록, Firebase JS SDK 릴리스 노트를 확인했다. 반영한 것은 둘이다.
+
+- 통합 화면의 권한 설정 기본값. 9월 도움말은 "수동(기본값)"이었으나 지금은 Pro·Max·Team이 **자동**, Enterprise만 수동이 기본값이다.
+  사이트는 세 곳(`cowork/one-claude`, `cowork/screen-tour`, `chat/screen-tour`)에서 "수동(기본값)이니 그대로 두라"고 적고 있어,
+  자동으로 시작한 초보자는 확인 요청을 한 번도 보지 못한 채 따라가게 된다. 10-06에 Claude Code 앱에서 생긴 것과 같은 문제라
+  같은 표현("처음부터 자동일 수 있으니 수동으로 바꿔 두라")으로 맞췄다. 요금제마다 기본값이 달라 본문에는 기본값을 단정하지 않는다.
+  one-claude에는 설정이 대화 전체에 적용된다는 점과 파일 영구 삭제는 어느 쪽이든 묻는다는 점을 덧붙였다.
+  근거: https://support.claude.com/en/articles/16761823 , https://support.claude.com/en/articles/13364135
+- 통합 화면 적용 범위와 옮겨 간 메뉴. Enterprise가 10-23부터 정식, Team은 베타로 둘 다 관리자가 켜야 바뀐다.
+  one-claude의 안내 상자를 "관리자에게 먼저 안내가 간다"에서 "관리자가 켜야 바뀐다"로 고쳤다.
+  Cowork 전역 지침이 옮겨 간 곳이 설정 개편으로 "설정 > 일반"이 아니게 되어(새 설정 화면은 Your Claude, 예전은 Account)
+  표에서 경로를 빼고 "설정의 Claude 지침"으로만 적었다. 근거: https://claude.com/resources/articles/unified-claude-enterprise
+
+확인했지만 바꾸지 않은 것은 다음과 같다.
+
+- Claude Duet(10월 21일): 연결한 앱을 살피며 먼저 알려 주는 별도 앱. 미국 Pro·Max 대기자 명단 연구 미리보기라 사실 시트에 "다루지 않는다"로만 적었다.
+- 통합 화면 도움말은 여전히 Docs·Slides·Design을 "유료 요금제 베타"라고 적고 있으나 10-13과 같이 아티팩트 도움말("모든 요금제, 기본 켜짐")을 따른다.
+  아티팩트에 필요한 설정 이름이 새 설정 화면에서 "Create and edit files"로 바뀐 것은 본문에서 그 설정을 언급하지 않아 사실 시트에만 적었다.
+- "아직 안 되는 것" 목록은 10-13과 같아 확인 날짜만 갱신했다.
+- Claude Code 2.1.297~2.1.310(10월 14~23일): 클라우드 세션, Claude Tag, Code Review, VS Code, 샌드박스, 자동 모드 분류기 같은 개발자·관리자용 변경뿐이다.
+  데스크톱 앱 문서의 권한 모드(기본 수동, 폴더별로 기억)는 10-06과 같다. Code Review 정식 출시(10월 15일)와 Claude Security(Enterprise)도 범위 밖이다.
+- Vercel(10월 22~23일): CLI로 계정 없이 배포하기, 빌드 캐시 크기 표시 등. GitHub 저장소를 연결하는 초보 흐름에는 영향이 없다.
+- Firebase JS SDK 13.1.0(10월 21일): Authentication 버그 수정과 Firestore Pipelines 기능 추가뿐이다.
+
+**클라우드에서 Claude Code 사용하기 추가 (2026-10-25, 사용자 요청).** 사이트에는 로컬(내 컴퓨터의 폴더) 작업만 있고
+클라우드 세션 설명이 없었다. "더 알아보기 > Claude Code 더 잘 쓰기"에 `advanced/cloud` 한 페이지를 넣었다. 판단은 셋이다.
+
+- 심화 과정에 둔다. 클라우드 세션은 GitHub 저장소가 있어야 시작되고 결과가 새 브랜치로 올라가므로, GitHub·Vercel까지 마친 뒤에
+  읽는 것이 맞다. 기본 과정(로컬 기준)은 그대로 두고, `code/getting-started`에 실행 환경이 클라우드로 선택되어 폴더 대신 저장소를
+  고르라고 나올 때의 문제 해결 항목만 넣어 이 페이지로 보냈다.
+- 권한 모드는 "계획으로 시작"을 권한다. 클라우드에는 수동 모드가 없어(편집 허용·계획·자동) 사이트 전체의 "수동으로 시작" 원칙을
+  그대로 쓸 수 없다. 고치기 전에 승인을 받는 계획 모드가 가장 가깝다.
+- 결과 확인은 Vercel 브랜치 미리보기로 안내한다. 공식 문서는 클라우드 세션에서 미리보기 화면이 되는지 밝히지 않는다. 대신 배포 과정에서
+  이미 연결한 Vercel이 브랜치마다 미리보기 주소를 만든다(기본 보호 설정에서는 로그인한 본인만 볼 수 있음). 브랜치·PR은 처음 나오는
+  개념이라 한 줄 정의와 `advanced/git-advanced` 링크를 붙였다. 터미널 전용 기능(--cloud, teleport), Remote Control,
+  클라우드 환경 세부 설정, Claude Code "프로젝트"는 다루지 않는다(CLI 중심 과정 금지 원칙).
+  근거: https://code.claude.com/docs/en/web-quickstart , https://code.claude.com/docs/en/claude-code-on-the-web
