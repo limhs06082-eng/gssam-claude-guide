@@ -486,6 +486,23 @@ PDF 2~3개 비교.
 
 ---
 
+# 7-1. COURSE 2-1. Claude 기능 더 쓰기 (2026-11 추가)
+
+Chat·Cowork 기본기를 익힌 뒤, 같은 대화창 안의 기능을 골라 읽는 과정. 순서대로 읽지 않는다(linear: false).
+
+- 문서와 발표 자료 만들기(Docs·Slides)
+- 차트와 그림으로 설명받기(custom visuals)
+- 깊이 조사 맡기기(Research)
+- 반복 작업 예약하기(scheduled tasks)
+- 말로 대화하기(음성 모드)
+- 엑셀·구글 시트 안에서 Claude 쓰기(추가 기능)
+- 기록이 남지 않는 시크릿 대화
+
+원칙: 기능이 있다는 이유로 쓰지 않는다. 페이지마다 "언제 쓰면 좋은가요"와 요금제·기기 조건을 먼저 밝힌다.
+메모리·개인 지침, 아티팩트 교실 도구, 스킬로 학교 양식 만들기는 동료 교사의 공개 자료(「처음 써 보는 Claude」)가 자세히 다루므로 이 과정에서 중복해 쓰지 않는다.
+
+---
+
 # 8. COURSE 3. Claude Code 앱
 
 목표:
@@ -1471,15 +1488,16 @@ Firebase를 사용해서 구현해 줘.
 
 ---
 
-# 24. COURSE 12. 더 알아보기
+# 24. COURSE 12. Claude Code 심화 (2026-11, "더 알아보기"에서 이름 변경)
 
-기본 과정을 마친 사용자를 위한 영역.
+Claude Code 기본 과정을 마친 사용자를 위한 영역.
 
 - CLAUDE.md
 - AGENTS.md
 - Skills
 - Plugins
 - MCP
+- 클라우드에서 Claude Code 사용하기
 - VS Code
 - CLI
 - Firebase 심화

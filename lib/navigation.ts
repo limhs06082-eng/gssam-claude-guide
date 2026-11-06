@@ -27,7 +27,7 @@ export interface NavCourse {
   title: string;
   /** 과정 소개 페이지의 한 줄 설명 */
   tagline: string;
-  /** false면 순서대로 읽는 과정이 아니다(문제 해결, 더 알아보기). 소개 페이지에 시작 버튼을 두지 않는다. */
+  /** false면 순서대로 읽는 과정이 아니다(Claude 기능 더 쓰기, 문제 해결, Claude Code 심화). 소개 페이지에 시작 버튼을 두지 않는다. */
   linear?: boolean;
   sections: NavSection[];
 }
@@ -112,6 +112,36 @@ export const courses: NavCourse[] = [
         pages: [
           { slug: "what-to-delegate", title: "AI에게 맡겨도 되는 일" },
           { slug: "privacy-and-school-data", title: "개인정보와 학교 자료 다루기" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "features",
+    title: "Claude 기능 더 쓰기",
+    tagline: "문서·발표 자료, 차트, 깊이 조사, 예약 작업, 음성처럼 대화창 안의 기능을 하나씩 골라 익힙니다.",
+    linear: false,
+    sections: [
+      {
+        title: "만들기",
+        pages: [
+          { slug: "docs-and-slides", title: "문서와 발표 자료 만들기(Docs·Slides)" },
+          { slug: "visuals", title: "차트와 그림으로 설명받기" },
+        ],
+      },
+      {
+        title: "조사하고 맡기기",
+        pages: [
+          { slug: "research", title: "깊이 조사 맡기기(Research)" },
+          { slug: "scheduled-tasks", title: "반복 작업 예약하기" },
+        ],
+      },
+      {
+        title: "다른 방법으로 쓰기",
+        pages: [
+          { slug: "voice", title: "말로 대화하기(음성 모드)" },
+          { slug: "office-and-google", title: "엑셀·구글 시트 안에서 Claude 쓰기" },
+          { slug: "incognito", title: "기록이 남지 않는 시크릿 대화" },
         ],
       },
     ],
@@ -397,8 +427,8 @@ export const courses: NavCourse[] = [
   },
   {
     slug: "advanced",
-    title: "더 알아보기",
-    tagline: "기본 과정을 마친 뒤, 필요한 사람만 골라서 읽는 심화 주제입니다.",
+    title: "Claude Code 심화",
+    tagline: "Claude Code로 만들기를 마친 뒤, 필요한 사람만 골라서 읽는 심화 주제입니다.",
     linear: false,
     sections: [
       {
@@ -410,6 +440,7 @@ export const courses: NavCourse[] = [
           { slug: "plugins", title: "Plugins" },
           { slug: "mcp", title: "MCP" },
           { slug: "multiple-agents", title: "여러 에이전트 활용하기" },
+          { slug: "cloud", title: "클라우드에서 Claude Code 사용하기" },
           { slug: "vscode", title: "VS Code에서 Claude Code 사용하기" },
           { slug: "cli", title: "터미널(CLI)에서 Claude Code 사용하기" },
           { slug: "git-advanced", title: "Git 조금 더 알기" },

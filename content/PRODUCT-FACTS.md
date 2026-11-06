@@ -12,7 +12,7 @@
 - 웹(claude.ai), 데스크톱 앱(Windows/Mac), 모바일 앱이 있다. 컴퓨터의 폴더를 다루는 일(Cowork 방식)과 Claude Code 앱은 데스크톱 앱에서 쓴다.
 - 2026년 9월부터 Chat과 Cowork가 하나의 대화창으로 합쳐지고 있다(단계적 적용, 유료 요금제부터). 새 화면에서는 모드를 고르지 않고 한 대화창에서 모든 것을 요청한다. 적용 전 계정은 입력창 근처에 "Chat"과 "Cowork" 선택지가 그대로 보인다. 한 번 새 화면으로 바뀐 계정은 되돌아가지 않는다. 이 사이트는 "Chat·Cowork·Code"를 부탁하는 방식 세 가지의 이름으로 계속 쓰되, 새 화면에서는 Chat과 Cowork가 같은 대화창이라는 점을 함께 안내한다. 자세한 사실은 아래 "Claude Cowork" 절.
 - 계정은 이메일 또는 Google 계정으로 만든다. 무료로 시작할 수 있고, 유료 요금제가 있다.
-- 일부 기능(예: Cowork, Claude Code)은 요금제나 지역에 따라 제공 여부가 다를 수 있다. 구체적인 금액과 한도는 바뀌므로 쓰지 않는다.
+- 일부 기능(예: Cowork, Claude Code)은 요금제나 지역에 따라 제공 여부가 다를 수 있다. 구체적인 금액과 한도는 바뀌므로 쓰지 않는다. 개인 요금제는 무료(Free)·Pro·Max·Ultra(2026-11 확인, Ultra는 Max보다 사용량이 많은 최상위 개인 요금제)이고 조직용은 Team·Enterprise다. 요금제 이름은 꼭 필요할 때만 쓴다. **Claude Code는 무료 요금제에 없다**(유료 요금제부터). 콘텐츠에는 이 사실을 분명히 쓴다. 근거: https://claude.com/pricing
 - 모델 선택 메뉴가 있다. 초보자는 기본 선택을 그대로 쓰면 된다. 모델 이름을 나열하지 않는다.
 
 ## Claude Chat
@@ -34,13 +34,24 @@
 - 공통: 여러 단계로 이루어진 작업 하나를 통째로 맡긴다. 작업 중간 과정이 단계별로 표시되고, 필요한 경우 사용자에게 확인을 요청한다.
 - 공통: 결과물은 파일(문서, 표, 요약본 등)로 만들어진다. 작업 폴더를 지정했으면 그 폴더에 생기고, 새 화면에서는 대화 옆에도 표시되어 내려받을 수 있다.
 - 공통: 파일을 지우거나 덮어쓰는 작업은 사용자가 확인해야 한다. 원본은 따로 보관해 두라고 안내한다.
-- 새 화면의 권한 설정: 입력창 근처에 있다. "수동"(기본값)은 조치 전에 매번 묻고, "자동"은 묻지 않고 계속 진행한다. 초보자에게는 수동을 권한다.
-- 새 화면에서 자리를 옮긴 것: 예전 Cowork 작업은 대화 목록(최근 항목)에, Cowork 전역 지침은 설정 > 일반의 Claude 지침에, 웹 검색 스위치는 없어짐(필요할 때 알아서 검색), Research는 입력창의 더하기(+) 버튼에서, 결과 저장 폴더는 설정의 저장소 폴더, 열어 준 폴더 목록은 설정의 신뢰할 수 있는 폴더. 모델 선택과 데스크톱 앱의 Code 탭은 그대로.
+- 새 화면의 권한 설정: 입력창 근처에 있다. "수동"은 조치 전에 매번 묻고, "자동"은 묻지 않고 계속 진행하되 조치 전에 자동 안전 검사가 돈다. 기본값은 요금제마다 다르다(2026-10-25 공식 도움말 기준 Pro·Max·Ultra·Team은 자동, Enterprise는 수동. 9월에는 모두 수동이었다). 설정은 그 대화 전체에 적용된다. 파일 영구 삭제는 어느 모드에서든 먼저 묻는다. 콘텐츠에는 기본값을 단정하지 않고 "처음부터 자동일 수 있으니 수동으로 바꿔 두라"고 쓴다(Claude Code 앱 권한 모드 안내와 같은 표현). 안전 도움말(13364135)에는 Manually approve·Automatically approve·Skip all approvals라는 이름도 보이지만 콘텐츠에서는 수동·자동만 쓴다. 근거: https://support.claude.com/en/articles/16761823 , https://support.claude.com/en/articles/13364135
+- 새 화면에서 자리를 옮긴 것: 예전 Cowork 작업은 대화 목록(최근 항목)에, Cowork 전역 지침은 설정의 Claude 지침(Instructions for Claude, 새 설정 화면은 Your Claude 아래, 예전 설정 화면은 Account 아래. 경로는 콘텐츠에 쓰지 않는다)에, 웹 검색 스위치는 없어짐(필요할 때 알아서 검색), Research는 입력창의 더하기(+) 버튼에서, 결과 저장 폴더는 설정의 저장소 폴더, 열어 준 폴더 목록은 설정의 신뢰할 수 있는 폴더. 모델 선택과 데스크톱 앱의 Code 탭은 그대로.
 - 새 화면에서 긴 작업은 노트북을 닫아도 클라우드에서 계속되고, 휴대폰 앱에서 진행 상황을 볼 수 있다. 단 컴퓨터의 폴더를 쓰는 작업은 데스크톱 앱이 열려 있어야 한다.
-- 새 화면에서 당장 안 되는 것(바뀔 수 있음, 2026-10-13 공식 도움말 기준): 시크릿 채팅은 이전 화면으로 열림, 검색에 이전 Cowork 작업이 나오지 않음, 대화 분기 불가, 프로젝트의 "GitHub에서 추가" 불가, Dispatch는 기존 사용자만. 콘텐츠에는 초보 과정에서 마주칠 수 있는 앞의 세 가지만 쓴다.
-- 적용 현황(2026-10-13 확인): 통합 화면은 여전히 Pro·Max에 단계적으로 적용 중이고, Team·무료는 "곧", Enterprise는 바뀌기 30일 전에 관리자에게 알린다.
-- Claude Docs(문서), Claude Slides(발표 자료), Claude Design(시각 자료)은 2026-10-08부터 베타가 끝나 무료를 포함한 모든 요금제에서 쓸 수 있다(Enterprise는 10-15부터 기본 켜짐). 통합 화면 도움말(16761823)은 아직 "유료 요금제"라고 적혀 있으나 더 새로운 발표와 아티팩트 도움말(17153992)을 따른다. 대화창에 말로 요청하거나 왼쪽 메뉴의 아티팩트(Artifacts)에서 고른다. 설정 > 기능(Capabilities)의 "클라우드 코드 실행과 파일 만들기"가 꺼져 있으면 쓸 수 없다(기본값은 단정하지 않는다). 콘텐츠에는 "무료 요금제를 포함해 모든 요금제에서"까지만 쓰고 날짜는 쓰지 않는다. 이름은 소개하되 사용법을 단계별로 가르치지 않는다. 같은 자리에 새로 생긴 Claude Dashboards(유료 베타)와 Claude Motion(Team·Enterprise 베타)은 초보 과정에서 다루지 않는다. 근거: https://claude.com/resources/articles/dashboards-and-motion , https://support.claude.com/en/articles/17153992
-- 외부 서비스 연결(커넥터), 반복 작업 예약, 내장 브라우저, 컴퓨터 사용은 심화 주제다. 기본 과정에서는 언급만 하거나 생략한다. Google 문서·시트·슬라이드 안에서 Claude를 쓰는 부가 기능(Claude for Google Workspace, 유료 요금제 베타, 2026-10-06 발표)과 Google 파일을 Claude에서 바로 만드는 커넥터도 같은 심화 주제로 둔다.
+- 새 화면에서 당장 안 되는 것(바뀔 수 있음, 2026-10-25 공식 도움말 기준): 시크릿 채팅은 이전 화면으로 열림, 검색에 이전 Cowork 작업이 나오지 않음, 대화 분기 불가, 프로젝트의 "GitHub에서 추가" 불가, Dispatch는 기존 사용자만. 콘텐츠에는 초보 과정에서 마주칠 수 있는 앞의 세 가지만 쓴다.
+- 적용 현황(2026-11-06 확인): 통합 화면은 Pro·Max·Ultra에 단계적으로 적용 중이다. Team은 베타, Enterprise는 10-23부터 정식이며 둘 다 관리자가 "Chat and Cowork unified"를 켠 곳에서만 바뀐다. 무료 요금제는 공식 문서에 언급이 없다. 콘텐츠에는 "개인 유료 요금제부터, 관리자가 있는 계정은 관리자가 켜야"까지만 쓴다. 근거: https://claude.com/resources/articles/unified-claude-enterprise
+- Claude Docs(문서), Claude Slides(발표 자료), Claude Design(시각 자료)은 2026-10-08부터 베타가 끝나 무료를 포함한 모든 요금제에서 쓸 수 있다(Enterprise는 10-15부터 기본 켜짐). 통합 화면 도움말(16761823)은 아직 "유료 요금제"라고 적혀 있으나 더 새로운 발표와 아티팩트 도움말(17153992)을 따른다. 대화창에 말로 요청하거나 왼쪽 메뉴의 아티팩트(Artifacts)에서 고른다. 설정 > 기능(Capabilities)의 "클라우드 코드 실행과 파일 만들기"(새 설정 화면에서는 "파일 만들기 및 편집", Create and edit files)가 꺼져 있으면 쓸 수 없다(기본값은 단정하지 않는다). 콘텐츠에는 "무료 요금제를 포함해 모든 요금제에서"까지만 쓰고 날짜는 쓰지 않는다. 사용법은 `features/docs-and-slides` 한 페이지에서 가르친다(2026-11-06 아티팩트 도움말 기준): 대화에서 요청하거나 입력창의 결과물(Output) 메뉴·왼쪽 아티팩트 탭의 서식에서 시작, 직접 편집하거나 문서에서 부분을 골라 "Edit with Claude", 처음에는 나만 볼 수 있음, 내보내기(Export)는 문서 → Word·PDF·Markdown·구글 문서, 슬라이드 → PowerPoint·PDF·구글 슬라이드, 디자인 → zip·PDF·PowerPoint·HTML. 같은 자리에 새로 생긴 Claude Dashboards(유료 베타)와 Claude Motion(Team·Enterprise 베타)은 초보 과정에서 다루지 않는다. 근거: https://claude.com/resources/articles/dashboards-and-motion , https://support.claude.com/en/articles/17153992
+- 외부 서비스 연결(커넥터), 내장 브라우저, 컴퓨터 사용은 심화 주제다. 기본 과정에서는 언급만 하거나 생략한다. 반복 작업 예약과 Google·Microsoft 추가 기능은 2026-11부터 `features` 과정에서 다룬다(아래 "Claude 기능 더 쓰기" 절). Google 파일을 Claude에서 바로 만드는 커넥터는 여전히 심화 주제다.
+- Claude Duet(2026-10-21 발표): 연결한 앱을 살피며 먼저 알려 주고 일을 대신하는 별도 앱. 미국 Pro·Max 대기자 명단 연구 미리보기라 다루지 않는다. 근거: https://claude.com/resources/articles/claude-duet
+
+## Claude 기능 더 쓰기 (2026-11-06 공식 도움말 기준, `features` 과정)
+
+- 차트·그림(custom visuals): 따로 켤 것 없이 "그림으로 그려 줘", "차트로" 요청. 모든 요금제, 웹·데스크톱만(휴대폰 앱에는 안 보임), 베타. 누르고 조절할 수 있음. 자동 저장 안 됨 → 이미지로 복사, 내려받기(svg/html), 아티팩트로 저장. 근거: https://support.claude.com/en/articles/13979539
+- 깊이 조사(Research): 유료 요금제(Pro·Max·Ultra·Team·Enterprise), 웹·데스크톱·휴대폰. 입력창 더하기(+) → Research, 새 화면은 `/deep-research`. 여러 번 검색해 출처가 달린 긴 보고서. 휴대폰에서 시작하면 커넥터를 쓰지 않고 웹만 검색. 소요 시간은 "몇 분"까지만 쓴다. 근거: https://support.claude.com/en/articles/11088861
+- 반복 작업 예약(scheduled tasks): 유료 요금제, 이전 Cowork 화면과 새 화면 모두. 새 화면은 대화에서 "매주 ○요일 ○시에" 말하고 예약(Schedule) 확인, 이전 화면은 왼쪽 예약됨(Scheduled) → 새 작업. 주기는 매시간·매일·매주·평일·수동. 클라우드에서 돌아 컴퓨터가 꺼져도 실행, 단 내 컴퓨터의 폴더·앱이 필요한 작업은 컴퓨터에서만. 예약됨에서 지난 실행 확인, 일시 중지·재개·삭제. 연결한 서비스·스킬·플러그인을 평소 작업처럼 쓴다. 보내기·삭제·구매처럼 되돌리기 어려운 일은 예약하지 말라고 안내한다. 근거: https://support.claude.com/en/articles/13854387 , https://support.claude.com/en/articles/13364135
+- 음성: 음성 모드는 모든 요금제, 휴대폰·웹·데스크톱, 휴대폰에서 가장 좋음, 베타. 소리 파형 버튼, 기본 핸즈프리. 말하는 언어는 설정의 음성 항목에서 따로 정함(앱 표시 언어와 별개). 새 화면에서는 작업 중인 대화에서도 쓸 수 있음. 받아쓰기(마이크 버튼)는 말을 글로 바꿔 입력창에 넣는다. 근거: https://support.claude.com/en/articles/11101966
+- 추가 기능: Claude for Google Workspace(구글 문서·시트·슬라이드)는 유료 요금제 공개 베타, 구글 Workspace 마켓플레이스에서 설치, 파일에서 확장 프로그램 → Claude → Open Claude, 관리자가 도메인에 배포 가능. Microsoft 365용(엑셀·파워포인트·워드·아웃룩) 추가 기능이 있고 Claude 설정의 스킬을 함께 쓴다. Microsoft 쪽 요금제 범위는 문서마다 달라 단정하지 않는다("공식 안내 확인"). 한글(hwp/hwpx)용은 없다. 근거: https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides , https://support.claude.com/en/articles/12512180
+- 시크릿 대화(incognito): 모든 요금제. 프로젝트 밖에서 새 대화를 열 때 유령 아이콘. 대화 목록·메모리에 남지 않고 기존 메모리도 쓰지 않으며 학습에 쓰이지 않음. 단 기본 30일 보관(Enterprise는 조직 설정). 새 화면에서는 이전 화면으로 열려 파일 생성·코드 실행 불가. "시크릿이라도 개인정보는 넣지 않는다"를 함께 쓴다. 근거: https://support.claude.com/en/articles/12260368
+- 다루지 않는 것: 메모리·개인 지침(사용자 지정 지침), 아티팩트로 교실 도구 만들기, 스킬로 학교 양식 가르치기, 파일 형식별 요령은 동료 교사의 공개 자료가 자세히 다루므로 이 사이트에서 중복해 쓰지 않는다(2026-11-06 결정). Personal Finance(미국 한정), Claude Duet, Dashboards·Motion도 다루지 않는다.
 
 ## Claude Code 앱
 
@@ -48,6 +59,7 @@
 - 흐름: 프로젝트 폴더 선택 → 대화창에 요청 → Claude가 파일을 만들고 수정 → 변경 내용과 실행 결과 확인.
 - Claude가 파일을 바꾸거나 명령을 실행하기 전에 허락을 묻는 경우가 있다. 처음에는 하나씩 확인하며 허락하는 쪽을 권한다.
 - 권한 모드(2026-10-06 공식 문서 기준): 보내기 버튼 옆에 모드 선택이 있다. **수동**(Manual)은 파일을 고치거나 명령을 실행하기 전에 매번 묻고, **자동**(Auto)은 묻지 않고 진행하되 안전 검사가 뒤에서 돈다. 그 밖에 편집 허용(Accept edits), 계획(Plan)이 있고, 모두 작업 중에 바꿀 수 있다. 최근 버전은 세션이 자동으로 시작할 수 있으므로 초보 콘텐츠는 "처음에 수동으로 맞추라"고 안내한다. 한 번 고른 모드는 그 폴더에서 기억된다(계획은 그 대화에만 적용). 모드 이름은 앱 언어·버전에 따라 영어로 보일 수 있고, 예전 버전은 Ask permissions·Auto accept edits·Plan mode라고 불렀다. 근거: https://code.claude.com/docs/en/permission-modes , https://code.claude.com/docs/en/desktop#choose-a-permission-mode
+- 클라우드 세션(2026-10-25 공식 문서 기준, 심화 주제 `advanced/cloud`): 내 컴퓨터가 아니라 Anthropic이 관리하는 가상 컴퓨터에서 Claude Code가 일한다. 웹(claude.ai/code, "Claude Code on the web"), 휴대폰 앱의 Code 탭, 데스크톱 앱(새 작업의 실행 환경 선택에서 Cloud), 터미널에서 시작한다. Pro·Max·Team과 일부 Enterprise 좌석에서 쓸 수 있고 무료 요금제는 해당 없다. GitHub 연결이 필요하고(처음 한 번 승인, 비공개 저장소는 Claude GitHub 앱 설치 필요), 이미 있는 저장소에서 시작한다(새 프로젝트는 GitHub에서 README가 있는 저장소를 먼저 만든다). 저장소를 복제해 작업한 뒤 결과를 새 브랜치로 올리고, 대화 옆에서 바뀐 내용을 보고 PR을 만든다. 노트북을 닫아도 계속되고 다른 기기에서 이어 본다. 권한 모드는 편집 허용·계획·자동만 있고 수동은 없다. 그래서 초보 콘텐츠는 "계획"으로 시작하라고 안내한다. 내 컴퓨터의 설정·`.env.local`은 없고 저장소만 있다(설정값은 클라우드 환경의 환경변수에). 사용량은 요금제 사용량에서 차감되고 가상 컴퓨터 요금은 따로 없다. 기본 환경은 자주 쓰는 패키지 저장소에만 접속할 수 있다(Trusted). 데스크톱 앱 문서는 클라우드 세션에서 미리보기 화면이 되는지 밝히지 않으므로 콘텐츠는 Vercel 브랜치 미리보기 주소로 확인하라고 쓴다. 웹·앱 메뉴 이름(Changes, Create PR 등)은 단정하지 않는다. 내 컴퓨터의 세션을 휴대폰에서 조종하는 Remote Control, 터미널 전용 기능(--cloud, teleport), 클라우드 환경 설정 세부, Claude Code "프로젝트"(여러 클라우드 세션 묶음)는 다루지 않는다. 근거: https://code.claude.com/docs/en/web-quickstart , https://code.claude.com/docs/en/claude-code-on-the-web , https://code.claude.com/docs/en/desktop 2026-11 Claude Code 변경 기록에는 Anthropic 호스팅 환경에서 저장소 없이 시작하는 "No repository" 선택지가 추가되었으나 공식 시작 문서는 여전히 GitHub 저장소를 전제하므로 콘텐츠는 저장소 기준을 유지한다.
 - 앱 안에서 만든 웹페이지를 미리 볼 수 있는 브라우저 화면이 있다. 터미널 화면도 있지만 초보자가 직접 명령을 칠 필요는 없다.
 - Claude에게 실행, 미리보기, 오류 확인, Git 저장, GitHub 업로드, 배포까지 말로 요청할 수 있다. 다만 계정 로그인(GitHub, Vercel 등)은 사용자가 직접 브라우저에서 해야 한다.
 - 오류 메시지는 복사해서 대화창에 붙여 넣거나, 화면을 캡처해서 붙여 넣으면 Claude가 읽는다.
