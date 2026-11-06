@@ -29,7 +29,7 @@ export default function HomePage() {
   const starter = starterPath
     .map((s) => getPage(s.course, s.page))
     .filter((p): p is NonNullable<typeof p> => p !== undefined);
-  const more = courses.filter((c) => ["projects", "troubleshooting", "advanced"].includes(c.slug));
+  const more = courses.filter((c) => ["features", "projects", "troubleshooting", "advanced"].includes(c.slug));
 
   return (
     <main id="main" className="mx-auto max-w-[44rem] px-4 py-10 md:px-6 md:py-16">
