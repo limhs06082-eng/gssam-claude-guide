@@ -393,3 +393,24 @@ Vercel 변경 기록, Firebase JS SDK 릴리스 노트를 확인했다. 반영�
 - Claude Code 2.1.319~2.1.322: Code 탭의 세션 간 메시지, 자동 모드, MCP 연결, VS Code 수정 등 개발자용 변경이다. 데스크톱 앱 문서의 권한 모드(기본 수동, 폴더별 기억)와 유료 요금제 전용도 같다.
 - Vercel(11월 7~9일): 빌드 디스크 확대, AI Gateway 모델 추가 등. GitHub 저장소를 연결해 배포하는 흐름과 무관하다.
 - Firebase JS SDK: 11-06 이후 새 릴리스가 없다(최신 13.2.0, 10월 30일, Firestore Pipeline 검색 정식).
+
+**업데이트 점검 (2026-11-17).** 11-10 이후의 도움말 릴리스 노트, 제품 소식, Claude Code 변경 기록(2.1.323~2.1.326), 통합 화면·아티팩트 도움말,
+새로 나온 Sheets·Whiteboards 도움말, Vercel 변경 기록, Firebase JS SDK 릴리스 노트를 확인했다. 반영한 것은 하나다.
+
+- **Claude Sheets(표)와 Claude Whiteboards(화이트보드)**(11월 10일, 유료 요금제 베타). Docs·Slides와 같은 아티팩트의 새 종류다.
+  행사 준비 표, 협의회 전 생각 정리처럼 교사 업무에 바로 쓰이고, 기존 "엑셀·구글 시트 안에서 Claude 쓰기"와 헷갈리기 쉬워
+  `features/sheets-and-whiteboards` 한 페이지를 "만들기" 묶음의 Docs·Slides 다음에 넣었다. 요금제(무료 없음)·기기(표는 휴대폰 일부만)를
+  처음에 밝히고, 공식 문서가 나누는 기준("이미 엑셀·구글 시트에 있는 파일은 추가 기능, 새로 만드는 가벼운 표는 Sheets")을 그대로 썼다.
+  예시는 기존 페이지(예산표, 교육과정 설명회)와 겹치지 않게 학예회 준비 표와 체험학습 장소 협의로 골랐고, 학생 개인정보가 든 표는 만들지 말라고 적었다.
+  `features/docs-and-slides`와 `features/office-and-google`에서 새 페이지로 연결했다.
+  근거: https://claude.com/resources/articles/sheets-whiteboards-data , https://support.claude.com/en/articles/18324300 , https://support.claude.com/en/articles/18324319
+
+확인했지만 바꾸지 않은 것은 다음과 같다.
+
+- Claude Data(옛 Dashboards, 11월 10일 정식): 회사 데이터 커넥터가 필요한 기능이라 다루지 않는다. 사실 시트의 이름만 고쳤다.
+- Claude Meetings(11월 12일, Team·Enterprise 베타, 구글 Meet 통화에 참여), 인터랙티브 커넥터(대화 옆에 외부 앱 열기), 제조업용 플러그인, 자체 호스팅 Managed Agents: 초보 교사 과정 범위 밖.
+- Claude for Teachers(무료 기간이 2028-07-30까지로 연장): 미국 K-12 교사 전용이라 한국 교사 대상인 이 사이트에서는 다루지 않는다. 화이트보드 도움말에 "Claude for Teachers에서는 아직 안 된다"는 문장이 있으나 같은 이유로 쓰지 않았다.
+- 통합 화면 도움말은 권한 기본값을 "자동으로 바꾸는 중"(rolling out)으로 고쳤다. 사이트는 기본값을 단정하지 않고 "수동으로 바꿔 두라"고 안내하므로 그대로다.
+- Claude Code 2.1.323~2.1.326: 샌드박스·권한 검사 강화, Code Mode(실험), VS Code, 플러그인 등 개발자·관리자용 변경이다. 데스크톱 Code 탭에는 사용량 한도에서 작업이 멈췄다가 이어지는 정도라 콘텐츠에 영향이 없다.
+- Vercel(11월 13~16일): AI Gateway, 비용 관리 예산 등. GitHub 저장소를 연결해 배포하는 흐름과 무관하다.
+- Firebase JS SDK 13.3.0(11월 11일): Firestore 트랜잭션·CDN 번들 버그 수정과 Pipelines 기능 추가뿐이다.
