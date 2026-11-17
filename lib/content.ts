@@ -70,7 +70,12 @@ export async function compilePage(page: FlatPage): Promise<CompiledPage | null> 
 
 /** 과정 소개 글. content/{course}/index.mdx 가 있으면 사용한다. */
 export async function compileCourseIntro(course: NavCourse) {
-  const source = await readFileOrNull(path.join(CONTENT_DIR, course.slug, "index.mdx"));
+  return compileStandalone(path.join(course.slug, "index.mdx"));
+}
+
+/** 과정에 속하지 않는 글(예: content/about.mdx). frontmatter 없이 본문만 쓴다. */
+export async function compileStandalone(relativePath: string) {
+  const source = await readFileOrNull(path.join(CONTENT_DIR, relativePath));
   if (source === null) return null;
   const { content: body } = matter(source);
   const { content } = await compileMDX({
