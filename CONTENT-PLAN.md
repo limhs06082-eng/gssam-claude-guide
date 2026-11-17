@@ -491,6 +491,7 @@ PDF 2~3개 비교.
 Chat·Cowork 기본기를 익힌 뒤, 같은 대화창 안의 기능을 골라 읽는 과정. 순서대로 읽지 않는다(linear: false).
 
 - 문서와 발표 자료 만들기(Docs·Slides)
+- 표와 화이트보드 만들기(Sheets·Whiteboards, 2026-11-17 추가)
 - 차트와 그림으로 설명받기(custom visuals)
 - 깊이 조사 맡기기(Research)
 - 반복 작업 예약하기(scheduled tasks)

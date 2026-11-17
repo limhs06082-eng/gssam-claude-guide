@@ -119,13 +119,14 @@ export const courses: NavCourse[] = [
   {
     slug: "features",
     title: "Claude 기능 더 쓰기",
-    tagline: "문서·발표 자료, 차트, 깊이 조사, 예약 작업, 음성처럼 대화창 안의 기능을 하나씩 골라 익힙니다.",
+    tagline: "문서·발표 자료, 표, 차트, 깊이 조사, 예약 작업, 음성처럼 대화창 안의 기능을 하나씩 골라 익힙니다.",
     linear: false,
     sections: [
       {
         title: "만들기",
         pages: [
           { slug: "docs-and-slides", title: "문서와 발표 자료 만들기(Docs·Slides)" },
+          { slug: "sheets-and-whiteboards", title: "표와 화이트보드 만들기(Sheets·Whiteboards)" },
           { slug: "visuals", title: "차트와 그림으로 설명받기" },
         ],
       },
