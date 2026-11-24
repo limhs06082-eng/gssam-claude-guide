@@ -11,6 +11,15 @@ export function SiteFooter() {
           <Link href="/about" className="underline underline-offset-4 hover:text-foreground">
             G쌤
           </Link>
+          {" · "}
+          <a
+            href="https://limhs06082-eng.github.io/gssam-ChatGPT-guide/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 hover:text-foreground"
+          >
+            ChatGPT 가이드 ↗
+          </a>
         </p>
       </div>
     </footer>
